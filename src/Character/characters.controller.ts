@@ -19,7 +19,7 @@ import { Nullable } from '../Shared/types/nullable.type';
 @ApiInternalServerErrorResponse({ description: 'Internal server error.' })
 @Controller('characters')
 export class CharactersController {
-  constructor(private charactersService: CharactersService) { }
+  constructor(private charactersService: CharactersService) {}
 
   @Get()
   @ApiOperation({ summary: 'Get all custom characters' })
@@ -45,8 +45,8 @@ export class CharactersController {
     enum: ['en', 'es'],
     required: false,
     schema: {
-      default: 'es'
-    }
+      default: 'es',
+    },
   })
   async findAll(): Promise<Character[]> {
     return await this.charactersService.findAll();
@@ -72,8 +72,8 @@ export class CharactersController {
     enum: ['en', 'es'],
     required: false,
     schema: {
-      default: 'es'
-    }
+      default: 'es',
+    },
   })
   @ApiNotFoundResponse({ description: 'Character not found.' })
   async findOne(@Param('id') id: string): Promise<Nullable<Character>> {

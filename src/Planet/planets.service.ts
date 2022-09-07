@@ -11,9 +11,9 @@ export class PlanetsService {
   constructor(
     @Inject(PlanetsRepositoryToken)
     private _repository: PlanetsRepository,
-  ) { }
+  ) {}
 
-  async findAll(page: number = 1): Promise<Planet[]> {
+  async findAll(page = 1): Promise<Planet[]> {
     return this._repository.findAll(page);
   }
 

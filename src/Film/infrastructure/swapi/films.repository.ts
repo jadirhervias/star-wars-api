@@ -6,7 +6,8 @@ import { FilmNotFound } from '../../exceptions/not-found.exception';
 
 export class FilmsSwapiRepository
   extends SwapiRepository<Film>
-  implements FilmsRepository {
+  implements FilmsRepository
+{
   protected resourceName(): string {
     return 'films';
   }
@@ -22,7 +23,7 @@ export class FilmsSwapiRepository
     );
   }
 
-  async findAll(page: number = 1): Promise<Film[]> {
+  async findAll(page = 1): Promise<Film[]> {
     return await firstValueFrom(this.getAll(page));
   }
 

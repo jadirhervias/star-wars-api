@@ -1,10 +1,4 @@
-import {
-  Controller,
-  Get,
-  Param,
-  Query,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Param, Query, ParseIntPipe } from '@nestjs/common';
 import {
   ApiOkResponse,
   ApiInternalServerErrorResponse,
@@ -22,7 +16,7 @@ import { FilmNotFound } from './exceptions/not-found.exception';
 @ApiInternalServerErrorResponse({ description: 'Internal server error.' })
 @Controller('films')
 export class FilmsController {
-  constructor(private filmsService: FilmsService) { }
+  constructor(private filmsService: FilmsService) {}
 
   @Get()
   @ApiOperation({ summary: 'Get all films' })
@@ -64,11 +58,11 @@ export class FilmsController {
     enum: ['en', 'es'],
     required: false,
     schema: {
-      default: 'es'
-    }
+      default: 'es',
+    },
   })
   @ApiQuery({ name: 'page', type: 'number', required: false })
-  async findAll(@Query('page', ParseIntPipe) page: number = 1): Promise<Film[]> {
+  async findAll(@Query('page', ParseIntPipe) page = 1): Promise<Film[]> {
     return await this.filmsService.findAll(page);
   }
 
@@ -100,8 +94,8 @@ export class FilmsController {
     enum: ['en', 'es'],
     required: false,
     schema: {
-      default: 'es'
-    }
+      default: 'es',
+    },
   })
   @ApiNotFoundResponse({ description: 'Film not found.' })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<Film> {

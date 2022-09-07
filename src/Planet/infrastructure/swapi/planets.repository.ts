@@ -6,7 +6,8 @@ import { PlanetNotFound } from '../../exceptions/not-found.exception';
 
 export class PlanetsSwapiRepository
   extends SwapiRepository<Planet>
-  implements PlanetsRepository {
+  implements PlanetsRepository
+{
   protected resourceName(): string {
     return 'planets';
   }
@@ -27,7 +28,7 @@ export class PlanetsSwapiRepository
   }
 
   async findOneById(id: number): Promise<Planet> {
-    const planet = await firstValueFrom(this.getOneById(Number(id)))
+    const planet = await firstValueFrom(this.getOneById(Number(id)));
     if (!planet) {
       throw new PlanetNotFound();
     }

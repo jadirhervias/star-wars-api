@@ -39,4 +39,4 @@ import { TypeOrmConfigService } from './Infrastructure/persistence/type-orm/conf
     },
   ],
 })
-export class AppModule { }
+export class AppModule {}

@@ -8,9 +8,9 @@ export class FilmsService {
   constructor(
     @Inject(FilmsRepositoryToken)
     private _repository: FilmsRepository,
-  ) { }
+  ) {}
 
-  async findAll(page: number = 1): Promise<Film[]> {
+  async findAll(page = 1): Promise<Film[]> {
     return this._repository.findAll(page);
   }
 

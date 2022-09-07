@@ -5,7 +5,7 @@ import Model from '../../../Shared/model';
 import { Nullable } from '../../../Shared/types/nullable.type';
 
 export abstract class SwapiRepository<T extends Model> {
-  constructor(@Inject(HttpService) private http: HttpService) { }
+  constructor(@Inject(HttpService) private http: HttpService) {}
 
   protected abstract resourceName(): string;
 

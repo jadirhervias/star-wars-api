@@ -6,7 +6,7 @@ export abstract class TypeOrmRepository<T extends Model> {
   constructor(
     @InjectDataSource()
     private _dataSource: DataSource,
-  ) { }
+  ) {}
 
   protected abstract entityTarget(): string;
 
@@ -29,7 +29,8 @@ export abstract class TypeOrmRepository<T extends Model> {
   }
 
   public async findAll(): Promise<T[]> {
-    return await this.repository().createQueryBuilder()
+    return await this.repository()
+      .createQueryBuilder()
       .orderBy({ updated_at: 'DESC' })
       .getMany();
   }
