@@ -1,0 +1,7 @@
+db:
+  provider: 'mysql'
+  url: 'localhost'
+  port: 3306
+  user: 'root'
+  password: ''
+  database: 'serverless-api-db-hervias'

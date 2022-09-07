@@ -1,0 +1,16 @@
+{
+  "id": "id",
+  "name": "nombre",
+  "climate": "clima",
+  "diameter": "diametro",
+  "population": "poblacion",
+  "terrain": "terreno",
+  "title": "titulo",
+  "opening_crawl": "texto_de_apertura",
+  "director": "director",
+  "producer": "productor",
+  "release_date": "fecha_de_estreno",
+  "age": "edad",
+  "created_at": "fecha_de_creacion",
+  "updated_at": "ultima_actualizacion"
+}
