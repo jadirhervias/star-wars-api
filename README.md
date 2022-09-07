@@ -18,7 +18,9 @@
 ```bash
 # Una vez ubicados en la raíz del proyecto...
 cp .env.example .env
+```
 
+```bash
 cp src/Shared/config/config.example.yaml src/Shared/config/config.yaml
 ```
 
